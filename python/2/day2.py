@@ -3,7 +3,7 @@ from typing import List
 intcode = List[int]
 
 
-def opcode_parse(text: str) -> intcode:
+def parse_intcode(text: str) -> intcode:
     return list(map(int, text.split(",")))
 
 
@@ -28,7 +28,7 @@ def run_intcode(codelist: intcode) -> intcode:
 
 def part1() -> int:
     with open("2/input.txt") as f:
-        cl = opcode_parse(f.read())
+        cl = parse_intcode(f.read())
     cl[1] = 12
     cl[2] = 2
     cl = run_intcode(cl)
@@ -38,7 +38,7 @@ def part1() -> int:
 
 def part2() -> int:
     with open("2/input.txt") as f:
-        initial_cl = opcode_parse(f.read())
+        initial_cl = parse_intcode(f.read())
 
     for noun in range(99):
         for verb in range(99):

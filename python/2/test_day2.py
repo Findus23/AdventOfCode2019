@@ -1,8 +1,8 @@
-from day2 import opcode_parse, run_intcode, part1, part2
+from day2 import parse_intcode, run_intcode, part1, part2
 
 
-def test_opcode_parse():
-    assert opcode_parse("2,2,3,45,5") == [2, 2, 3, 45, 5]
+def test_parse_intcode():
+    assert parse_intcode("2,2,3,45,5") == [2, 2, 3, 45, 5]
 
 
 def test_run_intcode():
