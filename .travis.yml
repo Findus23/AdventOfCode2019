@@ -1,0 +1,26 @@
+jobs:
+  allow_failures:
+    - rust: nightly
+  include:
+    - language: python
+      python: 3.8
+      before_script:
+        - cd python
+      script:
+        - pytest
+
+    - language: rust
+      rust: stable
+      cache: cargo
+      before_script:
+        - cd rust
+    - language: rust
+      rust: beta
+      cache: cargo
+      before_script:
+        - cd rust
+    - language: rust
+      rust: nightly
+      cache: cargo
+      before_script:
+        - cd rust
