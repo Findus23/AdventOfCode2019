@@ -30,7 +30,12 @@ pub fn part1() -> i32 {
 }
 
 pub fn part2() -> i32 {
-    return 1;
+    let data = fs::read_to_string("../python/1/input.txt").expect("Unable to read file");
+    let ints = data
+        .lines()
+        .map(|line| advanced_fuel(line.parse().expect("error when parsing line as integer")))
+        .sum();
+    return ints;
 }
 
 #[cfg(test)]
@@ -54,5 +59,10 @@ mod tests {
     #[test]
     fn test_part1() {
         assert_eq!(part1(), 3226488)
+    }
+
+    #[test]
+    fn test_part2() {
+        assert_eq!(part2(), 4836845)
     }
 }
