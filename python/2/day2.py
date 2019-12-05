@@ -49,6 +49,8 @@ def part2() -> int:
             if cl[0] == 19690720:
                 return 100 * noun + verb
 
+    return -1
+
 
 if __name__ == '__main__':
     print(part1())
